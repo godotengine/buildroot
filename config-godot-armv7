@@ -46,8 +46,8 @@ BR2_ARCH="arm"
 BR2_NORMALIZED_ARCH="arm"
 BR2_ENDIAN="LITTLE"
 BR2_GCC_TARGET_ABI="aapcs-linux"
-BR2_GCC_TARGET_CPU="cortex-a57"
-BR2_GCC_TARGET_FPU="fp-armv8"
+BR2_GCC_TARGET_CPU="cortex-a7"
+BR2_GCC_TARGET_FPU="neon-vfpv4"
 BR2_GCC_TARGET_FLOAT_ABI="hard"
 BR2_GCC_TARGET_MODE="arm"
 BR2_BINFMT_SUPPORTS_SHARED=y
@@ -57,10 +57,9 @@ BR2_ARM_CPU_HAS_FPU=y
 BR2_ARM_CPU_HAS_VFPV2=y
 BR2_ARM_CPU_HAS_VFPV3=y
 BR2_ARM_CPU_HAS_VFPV4=y
-BR2_ARM_CPU_HAS_FP_ARMV8=y
 BR2_ARM_CPU_HAS_ARM=y
 BR2_ARM_CPU_HAS_THUMB2=y
-BR2_ARM_CPU_ARMV8A=y
+BR2_ARM_CPU_ARMV7A=y
 
 #
 # armv4 cores
@@ -89,7 +88,7 @@ BR2_ARM_CPU_ARMV8A=y
 # armv7a cores
 #
 # BR2_cortex_a5 is not set
-# BR2_cortex_a7 is not set
+BR2_cortex_a7=y
 # BR2_cortex_a8 is not set
 # BR2_cortex_a9 is not set
 # BR2_cortex_a12 is not set
@@ -112,7 +111,7 @@ BR2_ARM_CPU_ARMV8A=y
 # BR2_cortex_a32 is not set
 # BR2_cortex_a35 is not set
 # BR2_cortex_a53 is not set
-BR2_cortex_a57=y
+# BR2_cortex_a57 is not set
 # BR2_cortex_a57_a53 is not set
 # BR2_cortex_a72 is not set
 # BR2_cortex_a72_a53 is not set
@@ -144,9 +143,7 @@ BR2_ARM_EABIHF=y
 # BR2_ARM_FPU_VFPV4 is not set
 # BR2_ARM_FPU_VFPV4D16 is not set
 # BR2_ARM_FPU_NEON is not set
-# BR2_ARM_FPU_NEON_VFPV4 is not set
-BR2_ARM_FPU_FP_ARMV8=y
-# BR2_ARM_FPU_NEON_FP_ARMV8 is not set
+BR2_ARM_FPU_NEON_VFPV4=y
 BR2_ARM_INSTRUCTIONS_ARM=y
 # BR2_ARM_INSTRUCTIONS_THUMB2 is not set
 BR2_BINFMT_ELF=y

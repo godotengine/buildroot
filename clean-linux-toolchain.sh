@@ -2,7 +2,7 @@
 
 set -e
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
   echo "usage: $0 arch"
   exit 1
 fi

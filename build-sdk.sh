@@ -8,11 +8,11 @@ function usage() {
   exit 1
 }
 
-if [ -z $1 ] || [ -z $1 ]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
   usage
 fi
 
-case $1 in
+case "$1" in
   linux-x86_64)
     host=$1
   ;;
@@ -21,26 +21,22 @@ case $1 in
     usage
 esac
 
-case $2 in
+case "$2" in
   i686)
     cp config-godot-i686 .config
     toolchain_prefix=i686-godot-linux-gnu
-    bits=32
   ;;
   x86_64)
     cp config-godot-x86_64 .config
     toolchain_prefix=x86_64-godot-linux-gnu
-    bits=64
   ;;
   armv7)
     cp config-godot-armv7 .config
     toolchain_prefix=arm-godot-linux-gnueabihf
-    bits=32
   ;;
   aarch64)
     cp config-godot-aarch64 .config
     toolchain_prefix=aarch64-godot-linux-gnu
-    bits=64
   ;;
   *)
     echo "unknown SDK target \"$2\""
@@ -67,7 +63,7 @@ function build_linux_sdk() {
   tar xf output/images/${toolchain_prefix}_sdk-buildroot.tar.gz -C godot-toolchains
 
   pushd godot-toolchains/${toolchain_prefix}_sdk-buildroot
-  ../../clean-linux-toolchain.sh ${toolchain_prefix} ${bits}
+  ../../clean-linux-toolchain.sh ${toolchain_prefix}
   popd
 
   pushd godot-toolchains

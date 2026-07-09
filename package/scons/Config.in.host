@@ -1,0 +1,5 @@
+config BR2_PACKAGE_HOST_SCONS
+       bool "host scons"
+       help
+         SCons 4.8.1
+
